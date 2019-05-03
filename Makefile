@@ -6,7 +6,8 @@ build:
 	swift build -c release --disable-sandbox
 
 install: build
-	install ".build/release/latlon" "$(bindir)"
+	mkdir -p "$(bindir)"
+	install ".build/release/latlon" "$(bindir)/latlon"
 
 uninstall:
 	rm -rf "$(bindir)/latlon"
